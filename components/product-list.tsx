@@ -7,7 +7,6 @@ interface Props {
   products: Stripe.Product[];
 }
 const ProductList = ({ products }: Props) => {
-  "Product:", products;
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const filteredProducts = products.filter((product) => {
@@ -31,7 +30,7 @@ const ProductList = ({ products }: Props) => {
       </div>
 
       <ul className="grid grid-cols-1 gap-3  md:grid-cols-2 lg:grid-cols-4 mt-2">
-        {filteredProducts.map((product, key) => (
+        {filteredProducts.map((product) => (
           <li key={product.id}>
             <ProductCard product={product} />
           </li>

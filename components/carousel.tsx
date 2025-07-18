@@ -8,8 +8,6 @@ interface Props {
   products: Stripe.Product[];
 }
 export const Carousel = ({ products }: Props) => {
-  "product", products;
-
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -21,8 +19,6 @@ export const Carousel = ({ products }: Props) => {
 
   const currentProduct = products[current];
 
-  // ("Current Product:", currentProduct);
-  // ("product", products);
   const price = currentProduct.default_price as Stripe.Price;
 
   return (
