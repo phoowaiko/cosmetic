@@ -10,7 +10,7 @@ interface Props {
 const ProductCard = ({ product }: Props) => {
   const price = product.default_price as Stripe.Price;
 
-  // console.log("Product Card:", product);
+  // ("Product Card:", product);
 
   return (
     <Link href={`/products/${product.id}`} className="block h-full">

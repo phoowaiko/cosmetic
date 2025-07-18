@@ -7,7 +7,7 @@ interface Props {
   products: Stripe.Product[];
 }
 const ProductList = ({ products }: Props) => {
-  console.log("Product:", products);
+  "Product:", products;
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const filteredProducts = products.filter((product) => {

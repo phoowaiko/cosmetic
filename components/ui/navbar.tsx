@@ -42,7 +42,11 @@ export const Navbar = () => {
         <div className="flex items-center space-x-4">
           <Link href="/checkout">
             <ShoppingCartIcon width={25} height={25} />
-            {cartCount > 0 && <span>{cartCount}</span>}
+            {cartCount > 0 && (
+              <span className="absolute  bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center shadow">
+                {cartCount}
+              </span>
+            )}
           </Link>
           <Button
             variant="ghost"

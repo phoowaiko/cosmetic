@@ -3,6 +3,7 @@ import Stripe from "stripe";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { useCartStore } from "@/store/cart-store";
+import Link from "next/link";
 
 interface Props {
   product: Stripe.Product;
@@ -71,7 +72,10 @@ export const ProductDetail = ({ product }: Props) => {
               </div>
             </div>
 
-            <Button className="w-full">Add to Cart</Button>
+            <Link href="/checkout">
+              {" "}
+              <Button className="w-full">Add to Cart</Button>
+            </Link>
           </div>
         </div>
       </div>

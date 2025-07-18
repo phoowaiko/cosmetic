@@ -4,7 +4,6 @@ import { CartItem } from "@/store/cart-store";
 import { redirect } from "next/navigation";
 
 const checkoutAction = async (formData: FormData): Promise<void> => {
-  console.log("click");
   const itemsJson = formData.get("items") as string;
   const items = JSON.parse(itemsJson);
   const line_items = items.map((item: CartItem) => ({
@@ -22,7 +21,7 @@ const checkoutAction = async (formData: FormData): Promise<void> => {
     success_url: `${process.env.NEXT_PUBLIC_BASE_URL}/success`,
     cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/checkout`,
   });
-  // console.log("this is session", session);
+  // ("this is session", session);
   redirect(session.url!);
 };
 
